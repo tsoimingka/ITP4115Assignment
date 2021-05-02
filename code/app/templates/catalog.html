@@ -1,0 +1,173 @@
+{% extends "base_2.html" %}
+
+{% block css2 %}
+<style type="text/css">
+body, nav {
+    background-color: rgb(255, 240, 229);
+}
+
+.show {
+    grid-column-end: span 9;
+    grid-column-start: 4;
+}
+
+.c_Box {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    display: grid;
+    width: 100%;
+    height: 100%;
+    row-gap: 2rem;
+    -webkit-column-gap: min(calc(100% / 11), 2rem);
+    column-gap: min(calc(100% / 11), 2rem);
+}
+
+.c_Box div {
+    background-color: lightgreen;
+    grid-column-end: span 4;
+    width: 100%;
+    height: 100%;
+    position: sticky;
+}
+
+.c_Box > div:hover {
+    
+}
+
+.c_Box p
+
+.language, .course {
+    grid-row-end: span 1;
+}
+
+.career {
+    grid-row-end: span 2;
+}
+
+.cs {
+    font-size: 80%;
+}
+
+.ct {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.sub {
+    position: absolute;
+    top: 40px;
+    height: 0;
+    transition: height 500ms;
+    overflow: hidden;
+}
+
+.menu .sub a:hover{
+    background-color: lightblue;
+}
+
+.main:hover .sub {
+    height: 40px;
+}
+</style>
+{% endblock %}
+
+{% block content2 %}
+<div class='show'>
+    <div>
+        <a>Not sure where to begin? Take our quiz →</a>
+    </div>
+    <br>
+    <div>
+        <h3>Most Popular</h3>
+        <div class='c_Box'>
+            <div class='language'>
+                <div>
+                    <p>Explore All</p>
+                    <p>Python</p>
+                </div>
+            </div>
+            <div class='career'>
+                <div>
+                    <p>Career Path</p>
+                    <p>Front-End Engineer</p>
+                    <p class='cs'>Beginner friendly, 121 Lessons</p>
+                    <p class='ct'>Job Essentials</p>
+                </div>
+            </div>
+            <div class='course'>
+                <div>
+                    <p>Course</p>
+                    <p>Learn JavaScript</p>
+                    <p class='cs'>Beginner friendly, 17 Lessons</p>
+                    <p class='ct'>Language Fluency</p>
+                </div>
+            </div>
+            <div class='course'>
+                <div>
+                    <p>Course</p>
+                    <p>Learn HTML</p>
+                    <p>Beginner friendly, 6 Lessons</p>
+                    <p class='ct'>Language Fluency</p>
+                </div>
+            </div>
+            <div class='language'>
+                <div>
+                    <p>Explore All</p>
+                    <p>Web Development</p>
+                </div>
+            </div>
+            <div class='course'>
+                <div>
+                    <p>Course</p>
+                    <p>Learn Python 3</p>
+                    <p class='cs'>Beginner friendly, 16 Lessons</p>
+                    <p class='ct'>Language Fluency</p>
+                </div>
+            </div>
+            <div class='language'>
+                <div>
+                    <p>Explore All</p>
+                    <p>Data Science</p>
+                </div>
+            </div>
+            <div class='career'>
+                <div>
+                    <p>Career Path</p>
+                    <p>Data Scientist</p>
+                    <p class='cs'>Beginner friendly, 85 Lessons</p>
+                    <p class='ct'>Job Essentials</p>
+                </div>
+            </div>
+            <div class='language'>
+                <div>
+                    <p>Explore All</p>
+                    <p>JavaScript</p>
+                </div>
+            </div>
+            <div class='career'>
+                <div>
+                    <p>Career Path</p>
+                    <p>Full-Stack Engineer</p>
+                    <p class='cs'>Beginner friendly, 145 Lessons</p>
+                    <p class='ct'>Job Essentials</p>
+                </div>
+            </div>
+            <div class='course'>
+                <div>
+                    <p>Course</p>
+                    <p>Learn Java</p>
+                    <p class='cs'>Beginner friendly, 16 Lessons</p>
+                    <p class='ct'>Language Fluency</p>
+                </div>
+            </div>
+            <div class='course'>
+                <div>
+                    <p>Course</p>
+                    <p>Welcome To Codecademy</p>
+                    <p class='cs'>Beginner friendly, 1 Lesson</p>
+                    <p class='ct'>Welcome Series</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

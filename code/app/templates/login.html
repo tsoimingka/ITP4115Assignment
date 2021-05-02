@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+ 
+{% block css %}
+<!--<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='css/login.css') }}>-->
+<style type="text/css">
+form {
+	width: 35%;
+	height: 70%;
+	position: relative;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    line-height: 5;
+	display: block;
+
+}
+
+form * {
+	position: relative;
+	height: 7%;
+	left: 50%;
+	margin: 3px 0;
+}
+
+form input {
+	width: 100%;
+}
+
+form input[type="submit"] {
+	font-size: 20px;
+	line-height: 100%;
+	background-color: rgb(44, 44, 255);
+	color: white;
+}
+
+form h1 {
+	font-size: 1.8em;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<form action="" method="post" novalidate>
+    {{ form.csrf_token }}
+	<h1>Log In to Codecademy</h1>
+	<br>
+	{{ form.username.label }}
+	{{ form.username }}
+	{{ form.password.label }}
+	{{ form.password }}
+	{% for error in (form.username.errors or form.password.errors) %}
+		<p style="color: red">{{ error }}</p>
+    {% endfor %}
+	<a>I forgot my password</a>
+	{{ form.submit() }}
+</form>
+{% endblock %}

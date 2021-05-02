@@ -1,0 +1,32 @@
+form {
+	width: 35%;
+	height: 70%;
+	position: relative;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    line-height: 5;
+	display: block;
+
+}
+
+form * {
+	position: relative;
+	height: 7%;
+	left: 50%;
+	margin: 3px 0;
+}
+
+form input {
+	width: 100%;
+}
+
+form input[type="submit"] {
+	font-size: 20px;
+	line-height: 100%;
+	background-color: rgb(44, 44, 255);
+	color: white;
+}
+
+form h1 {
+	font-size: 1.8em;
+}

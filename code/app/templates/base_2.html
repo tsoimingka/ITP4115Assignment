@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block css %}
+<style type="text/css">
+
+il {
+    overflow: hidden
+}
+
+body > div {
+    display: grid;
+}
+
+.page > div {
+    padding: 0 0 2rem 0;
+}
+
+.page * {
+    line-height: 2rem;
+}
+
+.page a {
+    font-weight: 400;
+}
+</style>
+{% block css2 %}{% endblock %}
+{% endblock %}
+
+{% block content %}
+<div>
+    <div class='page'>
+        <div>
+            <button>Language</button>
+            <ul>
+                {% for l_data in pl.query.all() %}
+                    <li><a href="{{ url_for('language', name=l_data.name) }}">{{ l_data.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <br>
+        <div>
+            <button>Subject</button>
+            <ul>
+                {% for s_data in s.query.all() %}
+                    <li><a href="{{ url_for('subjects', name=s_data.name) }}">{{ s_data.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <br>
+        <div>
+            <a href="#">Full Catalog</a>
+        </div>
+        <br>
+        <div>
+            <a href="#">Where do I begin?</a>
+        </div>
+    </div>
+    {% block content2 %}{% endblock %}
+</div>
+{% endblock %}

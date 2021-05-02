@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block css %}
+<style type="text/css">
+
+il {
+    overflow: hidden
+}
+
+body > div {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.page > div {
+    padding: 0 0 2rem 0;
+}
+.page a {
+    font-weight: 400;
+}
+</style>
+{% block css2 %}{% endblock %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

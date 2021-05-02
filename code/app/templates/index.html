@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block css %}
+<style type="text/css">
+bodt, nav, nav * {
+    background: white;
+}
+
+.mainshow, .order {
+    display: flex;
+}
+
+.order .number, .order .image {
+    flex: 1;
+}
+
+.order .desc {
+    flex: 2;
+}
+
+form {
+    line-height: 5;
+	display: block;
+
+}
+
+form * {
+	position: relative;
+	height: 7%;
+}
+
+form input {
+	width: 100%;
+}
+
+form input[type="submit"] {
+	font-size: 20px;
+	line-height: 100%;
+	background-color: rgb(44, 44, 255);
+	color: white;
+}
+
+form h1 {
+	font-size: 1.8em;
+}
+
+h2 {
+    font-size: 40px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mainshow">
+    <div>
+    <img src="{{ url_for('static', filename='image/home.png') }}">
+    </div>
+    <div>
+        <form action="" method="post" novalidate>
+            {{ form.csrf_token }}
+        	<h1>Get Started For Free</h1>
+        	<br>
+        	{{ form.username.label }}
+        	<br>
+        	{{ form.username }}
+        	<br>
+        	{{ form.password.label }}
+        	<br>
+        	{{ form.password }}
+        	<br>
+        	{% for error in (form.username.errors or form.password.errors) %}
+        		<p style="color: red">{{ error }}</p>
+            {% endfor %}
+        	<p>By signing up for Codecademy, you agree to
+        	Codecademy's <a>Terms of Service</a> & <a>Privacy Policy</a>.</p>
+        	<br>
+        	{{ form.submit() }}
+        </form>
+    </div>
+</div>
+<br>
+<div style="background:rgb(100,0,228);padding:0;display:flex;">
+    <div style="width:100%;">
+        <h2>Not sure<br>where to<br>begin?</h2>
+        <p>No need to worry, we’ll help you make sense of it all.</p>
+    </div>
+    <div>
+        <img src="{{ url_for('static', filename='image/home2.svg') }}"></img>
+    </div>
+</div>
+<div>
+    <div>
+        <h2>First, we invented the best system for learning to code.</h2>
+        <h2>Nine years and 50 million learners later, we've perfected it.</h2>
+    </div>
+    <div class="order">
+        <div class="number">
+            <h1>1</h1>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='image/home1.png') }}"></img>
+        </div>
+        <div class="desc">
+            <h1>Choose what to learn</h1>
+            <p>From building websites to analyzing data, the choice is yours. Not sure where to start? We'll point you in the right direction.</p>
+        </div>
+    </div>
+    <div class="order">
+        <div class="number">
+            <h1>2</h1>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='image/home2.png') }}"></img>
+        </div>
+        <div class="desc">
+            <h1>Learn by doing</h1>
+            <p>No matter your experience level, you'll be writing real, working code in minutes.</p>
+        </div>
+    </div>
+    <div class="order">
+        <div class="number">
+            <h1>3</h1>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='image/home3.png') }}"></img>
+        </div>
+        <div class="desc">
+            <h1>Get instant feedback</h1>
+            <p>Your code is tested as soon as you submit it, so you always know if you're on the right track.</p>
+        </div>
+    </div>
+    <div class="order">
+        <div class="number">
+            <h1>4</h1>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='image/home4.png') }}"></img>
+        </div>
+        <div class="desc">
+            <h1>Put your learning into practice</h1>
+            <p>Apply your learning with real-world projects and test your knowledge with tailor-made quizzes.</p>
+        </div>
+    </div>
+    <div class="order">
+        <div class="number">
+            <h1>5</h1>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='image/home5.png') }}"></img>
+        </div>
+        <div class="desc">
+            <h1>Land your dream job</h1>
+            <p>Coding skills have never been more in-demand. Learn everything you need to take your career to the next level.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
